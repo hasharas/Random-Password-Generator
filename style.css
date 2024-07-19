@@ -35,3 +35,12 @@ body{
       border-bottom: 4px solid #019f55;
       padding-bottom: 7px;
 }
+.display img{
+      cursor: pointer;
+      width: 30px;
+}
+.display input{
+      border: 0;
+      outline: 0;
+      font-size: 24px;
+}
