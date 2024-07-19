@@ -11,11 +11,34 @@
       <div class="container">
             <h1>Generate a <br><span>Random Password</span></h1>
             <div class="display">
-                  <input type="text" id="Password" placeholder="Password">
+                  <input type="text" id="password" placeholder="Password">
                   <img src="images/copy.png" alt="">
             </div>
-            <button><img src="./images/generate.png" alt="">Generate Password</button>
+            <button onclick="createPassword()"><img src="./images/generate.png" alt="">Generate Password</button>
       </div>
-      
+      <script>
+            const passwordBox = document.getElementById("password");
+            const length = 10;
+
+            const uperCase ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+            const symbols = "!@#$%^&*()_+-=[]{}";
+            const numbers = "0123456789";
+
+            const allCha = uperCase + numbers + symbols + lowerCase;
+
+            function createPassword(){
+                  let password = "";
+                  password += uperCase[math.flopr(math.random() * uperCase.length)];
+                  password += lowerCase[math.flopr(math.random() * lowerCase.length)];
+                  password += numbers[math.flopr(math.random() * numbers.length)];
+                  password += symbols[math.flopr(math.random() * symbols.length)];
+
+                  while(length > password.length){
+                        password+=allCha[math.flopr(math.random() * allCha.length)];
+                  }
+                  passwordBox.value = password;
+            }
+      </script>
 </body>
 </html>
