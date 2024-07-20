@@ -12,10 +12,13 @@
             <h1>Generate a <br><span>Random Password</span></h1>
             <div class="display">
                   <input type="text" id="password" placeholder="Password">
-                  <img src="images/copy.png" alt="">
+                  <img src="images/copy.png" id="copy" onclick="copyText()" alt="">
             </div>
             <button onclick="createPassword()"><img src="./images/generate.png" alt="">Generate Password</button>
+      
+
       </div>
+      <div class="out"><p id="out"></p></div>
       <script>
             const passwordBox = document.getElementById("password");
             const length = 10;
@@ -38,6 +41,15 @@
                         password+=allCha[Math.floor(Math.random() * allCha.length)];
                   }
                   passwordBox.value = password;
+            }
+            function copyText(){
+                  let Copy = document.getElementById("password");
+                  Copy.select();
+                  document.execCommand("Copy");
+
+                  document.getElementById("out")
+                .innerHTML = "Copied the text: "
+                + Copy.value;
             }
       </script>
 </body>
